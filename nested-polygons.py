@@ -260,7 +260,6 @@ class NestedPolygons:
 
         # Compute rotation for this frame
         drotation = self.frame_to_rotation(frame)
-        # print(drotation / (2 * np.pi / self.nsides))
 
         # Initialize outer radius
         radius_outer = RADIUS_MAX
