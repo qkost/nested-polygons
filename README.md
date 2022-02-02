@@ -9,7 +9,7 @@ Tool for creating cool visualizations of rotating, nested polygons.
 
 ## Usage
 ```python
-python nested-polygons --help
+python nested-polygons.py --help
 ```
 
 ## Example
