@@ -43,9 +43,12 @@ ARG_PARSER.add_argument(
 ARG_PARSER.add_argument(
     "--colors",
     "-c",
-    nargs=2,
+    nargs="*",
     type=str,
-    help="Colors for polygon fills. Defaults to matplotlib's C0 and C1",
+    help=(
+        "Colors for polygon fills. Can be any number of colors. "
+        "Defaults to matplotlib's C0 and C1"
+    ),
     default=["C0", "C1"]
 )
 
