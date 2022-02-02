@@ -11,7 +11,6 @@ import argparse
 import matplotlib.animation as animation
 import matplotlib.pyplot as plt
 import numpy as np
-from pdb import set_trace as bp
 
 RADIUS_MAX = 1
 RADIUS_MIN = 0.001
