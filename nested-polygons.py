@@ -271,7 +271,10 @@ class NestedPolygons:
             rotation = drotation * ipoly
 
             # Compute radius
-            radius = get_radius(drotation, radius_outer, self.nsides)
+            if ipoly > 0:
+                radius = get_radius(drotation, radius_outer, self.nsides)
+            else:
+                radius = radius_outer
 
             # Get a polygon
             poly = polygon(self.nsides, radius, rotation)
@@ -286,11 +289,17 @@ class NestedPolygons:
             if radius < RADIUS_MIN or drotation == 0:
                 last = ipoly
                 break
-
-            
         
-        for poly in self.polygons[last::]:
-            poly.set_xy(np.nan * np.zeros((1, 2)))
+        # Get rid of all the polygons after the last one was drawn for this
+        # frame
+        for artist in self.polygons[last::]:
+            artist.set_xy(np.nan * np.zeros((1, 2)))
+        
+        # Set the last, black, polygon to be the size of the mort recently
+        # drawn polygon. This is to avoid having a non-black spot in the 
+        # center of a drawing if the size didn't converge to zero in within
+        # the allowable number of polygons.
+        self.polygons[-1].set_xy(np.array(poly).T)
 
         return self.polygons
 
