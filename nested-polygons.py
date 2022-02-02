@@ -194,16 +194,6 @@ class NestedPolygons:
         self.nframes = nframes
         self.colors = colors
         self.max_polygons = max_polygons
-        # self.polygons = [
-        #     self.ax.fill(
-        #         [],
-        #         [],
-        #         edgecolor="black",
-        #         linestyle="-",
-        #         linewidth=1
-        #     )[0] 
-        #     for ii in range(max_polygons)
-        # ]
         self.polygons = self.create_polygons()
 
         # Some formatting
