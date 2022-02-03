@@ -13,7 +13,7 @@ python nested-polygons.py --help
 ```
 
 Help output
-```bash
+```
 usage: nested-polygons.py [-h] [--frames FRAMES]
                           [--colors [COLORS [COLORS ...]]]
                           [--max_polygons MAX_POLYGONS] [--delay DELAY]
